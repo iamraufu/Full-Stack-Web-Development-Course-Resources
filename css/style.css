@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Open Sans', serif;
+}
+
+body {
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.line {
+    height: 1px;
+    width: 300px;
+    background-color: white;
+    margin: auto;
+}
+
+.search-div {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.search-box,
+.search-button {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    background-color: thistle;
+    font-weight: 700;
+}
+
+.search-box:hover,
+.search-box:focus {
+    background-color: rgb(183, 149, 183);
+}
+
+.search-button {
+    width: 80px;
+    background-color: rgb(126, 80, 126);
+    color: aliceblue;
+}
+
+.search-button:hover {
+    background-color: rgb(56, 31, 56);
+}
+
+::placeholder {
+    color: #fff;
+}
+
+#global-statistics,
+#country-statistics {
+    background-color: yellowgreen;
+    margin: 30px auto;
+    height: 250px;
+    width: 300px;
+    border-radius: 1rem;
+    border: 1px solid lightgrey;
+    text-align: center;
+    color: black;
+}
+
+#global-statistics:hover {
+    background-color: rgb(110, 147, 37);
+    color: #fff;
+    cursor: pointer;
+}
+
+#country-statistics {
+    display: none;
+    background-color: rosybrown;
+}
+
+#country-statistics:hover {
+    background-color: rgb(149, 108, 108);
+}
