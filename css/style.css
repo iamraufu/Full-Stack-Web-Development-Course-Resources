@@ -1,0 +1,55 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-section,
+.different-section {
+    background-color: #f3f2ef;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.line {
+    height: 40px;
+    width: 4px;
+}
+
+.product-container {
+    box-shadow: 0 5px 15px #c4c4c44d;
+}
+
+.product-container:hover,
+.features:hover,
+.different:hover {
+    box-shadow: 0 5px 15px #5e5d5d4d;
+}
+
+.different {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.product-container img {
+    height: 200px;
+}
+
+.offer-container {
+    background-image: url(../images/offer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 670px
+}
+
+.features {
+    height: 80px;
+    box-shadow: 0 5px 15px #c4c4c44d;
+    cursor: pointer;
+}
+
+.features img {
+    height: 40px;
+}
