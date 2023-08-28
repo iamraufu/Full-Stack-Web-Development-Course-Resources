@@ -1,0 +1,192 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #00101f;
+    color: #e2e8f0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narline', Arial, sans-serif;
+}
+
+.navbar {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #5f5f5f;
+    font-size: 15;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 100%;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: 0 auto;
+}
+
+.line {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-right: -15px;
+    margin-left: -15px; */
+}
+
+.line p {
+    font-size: 20px;
+    color: #6c757d;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+p {
+    /* flex-wrap: wrap; */
+    text-align: justify;
+}
+
+span,
+h2 {
+    color: #dc5a5a;
+}
+
+.img-project,
+.img-top,
+.map {
+    height: auto;
+    max-width: 95%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.img-top {
+    border-radius: 50%;
+}
+
+img:hover {
+    filter: brightness(80%);
+}
+
+#projects p,
+#expertise p,
+#blogs p,
+#contact p {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+#blogs h3 {
+    color: #ff0b56;
+}
+
+input,
+textarea {
+    padding: 10px;
+    width: 260px;
+    margin-top: 10px;
+    background-color: #2b2b2b;
+    color: white;
+    border: none;
+}
+
+textarea {
+    width: 93%;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    width: 180px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #dc5a5a;
+    font-weight: 700;
+}
+
+.map {
+    margin-top: 100px;
+}
+
+footer {
+    background-color: rgba(26, 32, 44, 1);
+    margin: 0;
+}
+
+footer p {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    .half-width {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    navbar {
+        display: block;
+    }
+}
