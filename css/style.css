@@ -1,0 +1,53 @@
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+.bg-brand {
+    background-color: #fafafa;
+}
+
+.hover-text:hover {
+    text-decoration: underline;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-brand_light {
+    color: #71728a
+}
+
+.font-sm {
+    font-size: 12px;
+}
+
+.line {
+    /* width: 10px; */
+    height: 1px;
+    background-color: #dee2e6;
+}
+
+img:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+.btn-load_more {
+    width: 300px;
+    background-color: #292929;
+    color: white;
+    border: none;
+}
+
+.btn-load_more:hover {
+    background-color: #d7cfb8;
+    color: black;
+}
+
+.bg-image {
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    height: 720px;
+}
