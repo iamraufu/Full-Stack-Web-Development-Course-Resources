@@ -1,0 +1,57 @@
+body {
+    background: #1e2129;
+    color: #8e95a5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg-brand {
+    background: #1e2129;
+}
+
+.bg-brand-secondary {
+    background: #2d323e;
+    width: 180px;
+    height: 120px;
+}
+
+.movie-title,
+.movie-description,
+.rating {
+    font-size: 14px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.movie-year {
+    font-size: 12px;
+}
+
+.title-container {
+    height: 70px;
+}
+
+.movie-description {
+    font-size: 9px;
+    color: #8e95a5;
+}
+
+.text-brand {
+    color: #8e95a5;
+}
+
+.rating {
+    font-size: 10px;
+}
+
+.btn-watch-now {
+    /* margin-left: 10px; */
+    background: #363c4a;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 6px 20px;
+    margin-top: 10px;
+    width: 96%;
+}
