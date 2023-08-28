@@ -1,0 +1,20 @@
+.search-container button {
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: #f57224;
+    border-radius: 3px;
+    margin-left: -5px;
+    padding: 12px;
+}
+
+.search-bar {
+    background-color: #f5f5f5;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    width: 50%;
+    margin-left: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
