@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="text-center mt-5 fs-3">Bootstrap Shopping Cart</h1>
+
+    <div class="container">
+        <!-- Cart item 1 -->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img class="img-fluid mx-auto d-block" width="250" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1617135051000" alt="iPhone">
+                <h2 class="text-center text-muted fs-5">iPhone 13 Pro Max</h2>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button onclick="handleProductChange('phone', false)" class="btn btn-danger">Remove</button>
+                    <input id="phone-count" type="text" class="form-control text-center" value="1">
+                    <button onclick="handleProductChange('phone', true)" class="btn btn-success">Add</button>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <h2 class="fs-5 text-center text-muted"><span id="phone-total">130000</span> BDT</h2>
+            </div>
+        </div>
+
+        <!-- Cart item 2 -->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img class="img-fluid mx-auto d-block" width="250" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-gallery3-20201110?wid=4000&hei=3072&fmt=jpeg&qlt=90&.v=1632937845000" alt="Mac">
+                <h2 class="text-center text-muted fs-5">Macbook Pro</h2>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button onclick="handleProductChange('laptop', false)" class="btn btn-danger">Remove</button>
+                    <input id="laptop-count" type="text" class="form-control text-center" value="1">
+                    <button onclick="handleProductChange('laptop', true)" class="btn btn-success">Add</button>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <h2 class="fs-5 text-center text-muted"><span id="laptop-total">250000</span> BDT</h2>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between p-3">
+            <div class="col-md-8">
+                <h2 class="fs-5">Subtotal</h2>
+                <h3 class="fs-5">TAX</h3>
+                <h4 class="fs-5">Grand Total</h4>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fs-5 text-center"><span id="sub-total">380000</span> BDT</h2>
+                <h3 class="fs-5 text-center"><span id="tax-amount">0</span> BDT</h3>
+                <h4 class="fs-5 text-center"><span id="grand-total">380000</span> BDT</h4>
+            </div>
+        </div>
+        <button onclick="checkout()" class="btn btn-primary text-white mt-2">Checkout</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
