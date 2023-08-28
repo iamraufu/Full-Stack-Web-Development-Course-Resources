@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vegetable Shop</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Hind Siliguri', sans-serif;
+            color: white
+        }
+        
+        body {
+            background-color: #05445E;
+        }
+        
+        img {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="fs-5 text-center mt-5 text-white"> আমাদের সবজির দোকানে আপনাকে স্বাগতম</h1>
+        <img width="600" class="img-fluid mx-auto d-block mt-5" src="https://images.unsplash.com/photo-1582451649124-577d6d6e1990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80" alt="vegetables photo" />
+    </div>
+
+    <div id="vegetables" class="container my-5"></div>
+    <div id="update" class="container my-5"></div>
+
+    <div class="container my-5">
+        <form action="/addVegetable" method='post'>
+            <div class="form-group col-md-4 mx-auto d-block">
+                <label for="name">সবজির নাম</label>
+                <input type="text" name="name" class="form-control mb-3" placeholder="সবজি">
+
+                <label for="price">সবজির মূল্য</label>
+                <input type="number" name="price" class="form-control mb-3" placeholder="সবজির মূল্য">
+
+                <label for="quantity">সবজির সংখ্যা</label>
+                <input type="number" name="quantity" class="form-control mb-3" placeholder="সবজির সংখ্যা">
+                <button class="btn btn-success mx-auto d-block">সবজি তৈরী করুন</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+        // function for loading all data
+        function loadAllVegetables() {
+            fetch('/vegetables')
+                .then(res => res.json())
+                .then(vegetables => {
+                    const container = document.getElementById('vegetables');
+                    container.innerHTML = ''
+                    vegetables.forEach(veg => {
+                        const p = document.createElement('p');
+                        p.innerHTML = `<b>${veg.name}</b> দাম <b>${veg.price}</b> টাকা এবং আমার কাছে আছে <b>${veg.quantity}</b> কেজি
+                        <button onclick="loadVegetable('${veg._id}')" class="btn btn-secondary mx-2">আপডেট</button>
+                        <button onclick="deleteVegetable(event, '${veg._id}')" class="btn btn-danger">ডিলিট</button>
+                    `
+                        container.appendChild(p)
+                    })
+                })
+        }
+        loadAllVegetables();
+
+        function loadVegetable(id) {
+            fetch(`/vegetable/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    const update = document.getElementById('update')
+                    update.innerHTML = `
+                <h3>তথ্য হালনাগাদ করুন</h3>
+                <input type="text" value="${data.name}" id="name"  class="form-control mb-3" placeholder="">
+                <br>
+                <input type="text" value="${data.price}" id="price"  class="form-control mb-3" placeholder="">
+                <br>
+                <input type="text" value="${data.quantity}" id="quantity"  class="form-control mb-3" placeholder="">
+                <br>
+                <button onclick ="updateVegetable('${data._id}')" class='btn btn-primary'>আপডেট করুন</button>
+                `
+                })
+        }
+
+        // function for updating data
+        function updateVegetable(id) {
+            const name = document.getElementById('name').value
+            const quantity = document.getElementById('quantity').value
+            const price = document.getElementById('price').value
+
+            const vegetable = {
+                id,
+                name,
+                price,
+                quantity
+            }
+
+            fetch(`/update/${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(vegetable)
+                })
+                .then(res => res.json())
+                .then(result => {
+                    if (result) {
+                        loadAllVegetables()
+                        document.getElementById('update').innerHTML = ''
+                    }
+                })
+        }
+
+        // function for deleting data
+        function deleteVegetable(event, id) {
+            fetch(`delete/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(result => {
+                    if (result) {
+                        event.target.parentNode.style.display = 'none'
+                    }
+                })
+        }
+    </script>
+</body>
+
+</html>
